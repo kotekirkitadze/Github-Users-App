@@ -1,0 +1,39 @@
+:root{
+	--clr-primary:  #651fff;
+	--clr-gray:  #37474f;
+	--clr-gray-light: #b0bec5;
+}
+
+.wrapper-grid{
+	display: grid;
+	grid-template-columns: minmax(300px, 1fr);
+	justify-content: center;
+	grid-gap: 2rem;
+	margin: 2rem;
+}
+
+.container{
+	box-shadow: 0px 2px 8px 0px grey;
+	text-align: center;
+	border-radius: 1rem;
+	position: relative;
+	overflow: hidden;
+}
+
+@media screen and (min-width: 500px){
+	.wrapper-grid{
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (min-width: 700px){
+	.wrapper-grid{
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media screen and (min-width: 900px){
+	.wrapper-grid{
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
