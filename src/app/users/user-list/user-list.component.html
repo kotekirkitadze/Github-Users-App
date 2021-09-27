@@ -1,5 +1,13 @@
-<div class="wrapper-grid">
+ <!-- <div class="search-box">
+        <input class="search-txt" type="text" name="" placeholder="Type to search">
+        <a href="#a" class="search-btn">ss</a>
+</div> -->
 
-    <app-user-item class="container"></app-user-item>
-
+<div class="wrapper-grid" >
+    <app-user-item class="container" *ngFor="let item of myArr | paginate: {
+  itemsPerPage: 12,
+  currentPage: page, totalItems: totalLength
+}"></app-user-item>
 </div>
+
+<pagination-controls (pageChange)="page = $event" class="pagBtn"></pagination-controls>

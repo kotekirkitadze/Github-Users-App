@@ -4,6 +4,7 @@ import {
   HttpClientModule
 } from '@angular/common/http';
 
+import { NgxPaginationModule } from 'ngx-pagination'; // <-- import the module
 
 
 import { AppComponent } from './app.component';
@@ -26,7 +27,8 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
