@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {
-  HttpClientModule
+  HttpClientModule, HTTP_INTERCEPTORS
 } from '@angular/common/http';
 
 import { NgxPaginationModule } from 'ngx-pagination'; // <-- import the module
@@ -14,6 +14,7 @@ import { UserItemComponent } from './users/user-list/user-item/user-item.compone
 import { HeaderComponent } from './shell/header/header.component';
 import { NotFoundComponent } from './shell/not-found/not-found.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ApiInterceptor } from './services/api.interceptor';
 
 @NgModule({
   declarations: [
@@ -34,3 +35,4 @@ import { AppRoutingModule } from './app-routing.module';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+// { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true }

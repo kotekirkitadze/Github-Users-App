@@ -3,11 +3,10 @@
         <a href="#a" class="search-btn">ss</a>
 </div> -->
 
-<div class="wrapper-grid" >
-    <app-user-item class="container" *ngFor="let item of myArr | paginate: {
+<div class="wrapper-grid"  >
+    <app-user-item class="container" *ngFor="let item of users | paginate: {
   itemsPerPage: 12,
-  currentPage: page, totalItems: totalLength
-}"></app-user-item>
+  currentPage: page, totalItems: totalLength}"  [user]="item"></app-user-item>
 </div>
 
 <pagination-controls (pageChange)="page = $event" class="pagBtn"></pagination-controls>
