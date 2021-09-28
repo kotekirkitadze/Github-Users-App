@@ -15,7 +15,7 @@ const ROUTES = [
     component: UserListComponent
   },
   {
-    path: "users/:id",
+    path: "users/:userName",
     component: UserDetailsComponent
   },
   {

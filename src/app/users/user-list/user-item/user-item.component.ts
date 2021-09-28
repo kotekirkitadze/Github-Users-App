@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ThisReceiver } from '@angular/compiler';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { User } from 'src/app/models/model';
 
 @Component({
@@ -9,9 +10,14 @@ import { User } from 'src/app/models/model';
 export class UserItemComponent implements OnInit {
 
   @Input() user: User;
+  @Output() emitValue = new EventEmitter<string>()
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  emit(userName: string) {
+    this.emitValue.emit(userName);
   }
 
 }

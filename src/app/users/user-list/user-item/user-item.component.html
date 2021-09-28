@@ -2,8 +2,9 @@
 <div class="container2">
 			<div class="banner-img"></div>
 			<img src="{{user.pic_url}}" alt="Profile Image" class="profile-img">
-			<h1 class="name">{{user.name}}</h1>
-			<p class="description">Num of Repos</p>
+			<a (click)="emit(user.userName)"><h1 class="name">{{user.name}}</h1></a>
+      <span>{{user.userType}}</span>
+			<p class="description">Number of repositories: {{user.repositories}}</p>
 			<p class="description">Repo 1</p>
 			<p class="description">Repo 2</p>
 			<p class="description">Repo 3</p>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { UserApi, User } from 'src/app/models/model';
@@ -11,16 +12,16 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class UserListComponent implements OnInit {
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService,
+    private router: Router) { }
 
   totalLength: any;
   page: number = 1;
-  myArr: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 3, 4, 5, 6, 7, 8, 9, 10]
+
 
   ngOnInit(): void {
     this.getUsers().subscribe(d => {
       this.users = d;
-      console.log(d);
     })
   }
 
@@ -28,18 +29,27 @@ export class UserListComponent implements OnInit {
 
   getUsers(): Observable<User[]> {
     return this.apiService.getUsers()
-      .pipe(
-        map(d => d.map<User>((data: UserApi) => {
-          return {
-            name: data.name,
-            email: data.email,
-            pic_url: data.avatar_url,
-            userType: data.type,
-            repositories: data.public_repos,
-            repos_url: data.repos_url
-          }
-        })),
-        tap(d => console.log(d))
-      )
   }
+
+  toDetails(userName: string) {
+    this.router.navigate(['users', userName]);
+  }
+  //ეიპიდაიდან
+  // getUsersOriginal(): Observable<User[]> {
+  //   return this.apiService.getUsersOriginal()
+  //     .pipe(
+  //       tap(d => console.log(d)),
+  //       map(d => d.map<User>((data: UserApi) => {
+  //         return {
+  //           name: data.name,
+  //           email: data.email,
+  //           pic_url: data.avatar_url,
+  //           userType: data.type,
+  //           repositories: data.public_repos,
+  //           repos_url: data.repos_url,
+  //           userName: data.login
+  //         }
+  //       }))
+  //     )
+  // }
 }

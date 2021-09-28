@@ -5,6 +5,7 @@ export interface UserApi {
   email: string;
   repos_url: string;
   public_repos: number;
+  login: string;
 }
 
 
@@ -15,5 +16,6 @@ export interface User {
   email: string;
   repos_url: string;
   repositories: number;
+  userName: string;
 }
 

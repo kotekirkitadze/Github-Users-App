@@ -6,14 +6,19 @@ import { Observable } from "rxjs";
 export class ApiInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     console.log("hi hi")
+    const TOKEN = "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";
     let jsonReq: HttpRequest<any> = req.clone({
-      setHeaders: {
-        "Accept": "application/vnd.github.v3+json",
-        "Authorization": "token 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",
-        "Content-type": "Content-Type: application/json; charset=utf-8"
-      }
+      headers: req.headers.set("Authorization",
+        "Bearer " + TOKEN)
     })
-
     return next.handle(jsonReq);
   }
 }
+
+
+
+// setHeaders: {
+//   "Accept": "application/vnd.github.v3+json",
+//     "Authorization": "token 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",
+//       "Content-type": "Content-Type: application/json; charset=utf-8",
+//       }

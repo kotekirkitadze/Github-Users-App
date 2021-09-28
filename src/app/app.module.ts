@@ -31,7 +31,7 @@ import { ApiInterceptor } from './services/api.interceptor';
     AppRoutingModule,
     NgxPaginationModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
