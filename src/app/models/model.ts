@@ -7,6 +7,9 @@ export interface UserApi {
   public_repos: number;
   login: string;
   repo_info?: RepositoryApi[];
+  organizations_url?: string;
+  followers: string;
+  created_at: string;
 }
 
 
@@ -19,6 +22,8 @@ export interface User {
   repositories: number;
   userName: string;
   repositoriesInfo?: Repository[];
+  followers?: string;
+  created_at?: string;
 }
 
 export interface RepositoryApi {
@@ -34,3 +39,22 @@ export interface Repository {
   repo_url;
 }
 
+export interface OrganizationAPi {
+  login: string;
+  html_url: string;
+  avatar_url: string;
+}
+
+export interface Organization {
+  organization_name: string;
+  organization_site: string;
+  organization_picture: string;
+}
+
+
+export type userWithOrganization = User & Organization;
+
+export interface UserResolved {
+  error?: any;
+  user?: userWithOrganization;
+}

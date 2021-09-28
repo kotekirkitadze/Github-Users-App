@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { map, shareReplay, tap } from 'rxjs/operators';
 import { UserApi, User } from 'src/app/models/model';
 import { ApiService } from 'src/app/services/api.service';
 
@@ -29,7 +29,7 @@ export class UserListComponent implements OnInit {
   users: User[];
 
   getUsers(): Observable<User[]> {
-    return this.apiService.getUsers()
+    return this.apiService.getUsers();
   }
 
   toDetails(userName: string) {

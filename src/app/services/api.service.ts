@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { forkJoin, Observable } from 'rxjs';
-import { filter, map, switchMap } from 'rxjs/operators';
-import { UserApi, User, RepositoryApi } from '../models/model';
+import { filter, tap, map, switchMap, shareReplay } from 'rxjs/operators';
+import { UserApi, User, OrganizationAPi, userWithOrganization } from '../models/model';
 
 @Injectable({
   providedIn: 'root'
@@ -65,7 +65,36 @@ export class ApiService {
 
 
   getUser(userName: string): Observable<any> {
-    return this.http.get(`${this.apiUrl}/${userName}`);
+    return this.http.get<UserApi>(`${this.apiUrl}/${userName}`)
+      .pipe(
+        tap(d => console.log(d.organizations_url)),
+        switchMap(data => {
+          return this.makeApiRequest(data.organizations_url)
+            .pipe(
+              switchMap((firstOrgData: { url?: string }) => {
+                console.log("dda", firstOrgData)
+                return this.makeApiRequest(firstOrgData[0].url).pipe(
+                  map((finalOrgData: OrganizationAPi) => {
+                    return {
+                      name: data.name,
+                      pic_url: data.avatar_url,
+                      userType: data.type,
+                      email: data.email,
+                      repos_url: data.repos_url,
+                      public_repos: data.public_repos,
+                      login: data.public_repos,
+                      organization_name: finalOrgData.login,
+                      organization_site: finalOrgData.html_url,
+                      organization_picture: finalOrgData.avatar_url,
+                      followers: data.followers,
+                      created_at: data.created_at
+                    }
+                  })
+                )
+              })
+            )
+        })
+      );
   }
 
 

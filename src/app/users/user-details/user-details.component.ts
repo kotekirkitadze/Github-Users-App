@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
-
+import { UserResolved, userWithOrganization } from '../../models/model'
 @Component({
   selector: 'app-user-details',
   templateUrl: './user-details.component.html',
@@ -10,19 +10,21 @@ import { ApiService } from 'src/app/services/api.service';
 export class UserDetailsComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute,
-    private apiService: ApiService) { }
+    private apiService: ApiService) {
+
+    this.data = this.activatedRoute.snapshot.data['userResolvedData'];
+  }
 
   userName: string;
-  data: any;
+  data: UserResolved;
 
   ngOnInit(): void {
-    this.userName = this.activatedRoute.snapshot.paramMap.get('userName');
 
-    this.apiService.getUser(this.userName).subscribe(d => {
-      this.data = d;
-      console.log(d)
-    })
+    console.log(this.data)
+  }
 
+  get getUserData() {
+    return this.apiService.getUser(this.userName);
   }
 
 }

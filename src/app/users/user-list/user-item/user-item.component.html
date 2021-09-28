@@ -7,7 +7,8 @@
 			<p class="description">Number of repositories: {{user.repositories}}</p>
 			<div class="repoInfo">
         <h5>First three repo:</h5>
-        <p class="repoNames" *ngFor="let el of user.repositoriesInfo; let i = index">{{i+1}}. {{el.repo_name}}, </p>
+        <p class="repoNames" *ngFor="let el of user.repositoriesInfo; let i = index">{{i+1}}.
+          <a href="{{el.repo_url}}" target="_blank">{{el.repo_name}}</a> </p>
       </div>
 
 </div>

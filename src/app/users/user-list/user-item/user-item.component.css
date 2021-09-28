@@ -49,3 +49,18 @@ h5{
   text-align: left;
   margin: 5px;
 }
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+}
+a:hover {
+  color: rgb(40, 77, 77);
+}
+
+a:link {
+  color: rgb(8, 8, 8);
+}

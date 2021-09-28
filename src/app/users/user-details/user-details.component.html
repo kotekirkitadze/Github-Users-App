@@ -2,12 +2,18 @@
   <div class="containerMain">
     <div class="box">
         <div class="image">
-            <img class="image" src="{{data.avatar_url}}" alt="User's picture">
+            <img class="image" src="{{data.user.pic_url}}" alt="User's picture">
         </div>
         <div class="details">
-          <h1>Konstantine Kirkitadze</h1>
-          <h2>Web Developer</h2>
-          <a routerLink="" class="btn"> Get in Touch</a>
+          <h1>{{data['user'].name}}</h1>
+          <p>User Type: {{data['user'].userType}}</p>
+          <p>Account Created at: {{data['user'].created_at}}</p>
+          <p>Email {{data['user'].email}}</p>
+          <p *ngIf="data['user'].userName">Github Username: {{data['user'].userName}}</p>
+          <p>Followers: {{data['user'].followers}}</p>
+          <p>Account Created at: {{data['user'].created_at}}</p>
+          <p>Organization name: {{data['user'].organization_name}}</p>
+          <a routerLink="" class="btn"> Back</a>
         </div>
     </div>
   </div>
