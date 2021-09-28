@@ -35,3 +35,17 @@ a:hover {
   cursor: pointer;
 }
 
+.repoInfo {
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+h5{
+  font-size: 17px;
+   text-align: left;
+}
+
+.repoNames {
+  text-align: left;
+  margin: 5px;
+}

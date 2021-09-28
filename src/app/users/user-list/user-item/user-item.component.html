@@ -5,7 +5,9 @@
 			<a (click)="emit(user.userName)"><h1 class="name">{{user.name}}</h1></a>
       <span>{{user.userType}}</span>
 			<p class="description">Number of repositories: {{user.repositories}}</p>
-			<p class="description">Repo 1</p>
-			<p class="description">Repo 2</p>
-			<p class="description">Repo 3</p>
+			<div class="repoInfo">
+        <h5>First three repo:</h5>
+        <p class="repoNames" *ngFor="let el of user.repositoriesInfo; let i = index">{{i+1}}. {{el.repo_name}}, </p>
+      </div>
+
 </div>

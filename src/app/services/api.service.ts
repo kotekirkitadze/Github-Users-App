@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { forkJoin, Observable } from 'rxjs';
-import { map, switchMap } from 'rxjs/operators';
-import { UserApi, User } from '../models/model';
+import { filter, map, switchMap } from 'rxjs/operators';
+import { UserApi, User, RepositoryApi } from '../models/model';
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +29,35 @@ export class ApiService {
   //     })
   //   )
   // }
+
+
+  getUsersOriginal(): Observable<UserApi[]> {
+    return this.http.get<any[]>(this.apiUrl).pipe(
+      map(d => d.map(data => data.url)),
+      switchMap(d => {
+        return forkJoin(d.map(d => this.makeApiRequest(d)))
+      }),
+      switchMap((data: UserApi[]) => {
+        return forkJoin(data.map((user: UserApi) => {
+          return this.makeApiRequest(user.repos_url)
+            .pipe(
+              map(element => {
+                return element.filter((_, i) => i <= 2);
+              })
+            )
+        })).pipe(
+          map((dataRepo) => {
+            return data.map((el, i) => {
+              return {
+                ...el,
+                repo_info: dataRepo[i]
+              }
+            })
+          })
+        )
+      })
+    )
+  }
 
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.jsonServer);

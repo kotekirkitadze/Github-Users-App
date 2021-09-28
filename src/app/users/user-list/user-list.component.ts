@@ -22,6 +22,7 @@ export class UserListComponent implements OnInit {
   ngOnInit(): void {
     this.getUsers().subscribe(d => {
       this.users = d;
+      console.log(d)
     })
   }
 
@@ -34,22 +35,30 @@ export class UserListComponent implements OnInit {
   toDetails(userName: string) {
     this.router.navigate(['users', userName]);
   }
+
+
   //ეიპიდაიდან
-  // getUsersOriginal(): Observable<User[]> {
-  //   return this.apiService.getUsersOriginal()
-  //     .pipe(
-  //       tap(d => console.log(d)),
-  //       map(d => d.map<User>((data: UserApi) => {
-  //         return {
-  //           name: data.name,
-  //           email: data.email,
-  //           pic_url: data.avatar_url,
-  //           userType: data.type,
-  //           repositories: data.public_repos,
-  //           repos_url: data.repos_url,
-  //           userName: data.login
-  //         }
-  //       }))
-  //     )
-  // }
+  getUsersOriginal(): Observable<User[]> {
+    return this.apiService.getUsersOriginal()
+      .pipe(
+        tap(d => console.log(d)),
+        map(d => d.map<User>((data: UserApi) => {
+          return {
+            name: data.name,
+            email: data.email,
+            pic_url: data.avatar_url,
+            userType: data.type,
+            repositories: data.public_repos,
+            repos_url: data.repos_url,
+            userName: data.login,
+            repositoriesInfo: data.repo_info.map(el => {
+              return {
+                repo_name: el.name,
+                repo_url: el.html_url
+              }
+            })
+          }
+        }))
+      )
+  }
 }

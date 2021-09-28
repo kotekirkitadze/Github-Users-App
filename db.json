@@ -7,7 +7,21 @@
         "userType": "User",
         "repositories": 62,
         "repos_url": "https://api.github.com/users/mojombo/repos",
-        "userName": "mojombo"
+        "userName": "mojombo",
+        "repositoriesInfo": [
+          {
+            "repo_name": "30daysoflaptops.github.io",
+            "repo_url": "https://github.com/mojombo/30daysoflaptops.github.io"
+          },
+          {
+            "repo_name": "asteroids",
+            "repo_url": "https://github.com/mojombo/asteroids"
+          },
+          {
+            "repo_name": "benbalter.github.com",
+            "repo_url": "https://github.com/mojombo/benbalter.github.com"
+          }
+        ]
       },
       {
         "name": "Chris Wanstrath",
@@ -16,7 +30,21 @@
         "userType": "User",
         "repositories": 107,
         "repos_url": "https://api.github.com/users/defunkt/repos",
-        "userName": "defunkt"
+        "userName": "defunkt",
+        "repositoriesInfo": [
+          {
+            "repo_name": "ace",
+            "repo_url": "https://github.com/defunkt/ace"
+          },
+          {
+            "repo_name": "acts_as_textiled",
+            "repo_url": "https://github.com/defunkt/acts_as_textiled"
+          },
+          {
+            "repo_name": "ambition",
+            "repo_url": "https://github.com/defunkt/ambition"
+          }
+        ]
       },
       {
         "name": "PJ Hyett",
@@ -25,7 +53,21 @@
         "userType": "User",
         "repositories": 8,
         "repos_url": "https://api.github.com/users/pjhyett/repos",
-        "userName": "pjhyett"
+        "userName": "pjhyett",
+        "repositoriesInfo": [
+          {
+            "repo_name": "auto_migrations",
+            "repo_url": "https://github.com/pjhyett/auto_migrations"
+          },
+          {
+            "repo_name": "blackjax",
+            "repo_url": "https://github.com/pjhyett/blackjax"
+          },
+          {
+            "repo_name": "errcount",
+            "repo_url": "https://github.com/pjhyett/errcount"
+          }
+        ]
       },
       {
         "name": "Yehuda Katz",
@@ -34,7 +76,21 @@
         "userType": "User",
         "repositories": 243,
         "repos_url": "https://api.github.com/users/wycats/repos",
-        "userName": "wycats"
+        "userName": "wycats",
+        "repositoriesInfo": [
+          {
+            "repo_name": "abbot-from-scratch",
+            "repo_url": "https://github.com/wycats/abbot-from-scratch"
+          },
+          {
+            "repo_name": "abbot-ng",
+            "repo_url": "https://github.com/wycats/abbot-ng"
+          },
+          {
+            "repo_name": "activerecord-import",
+            "repo_url": "https://github.com/wycats/activerecord-import"
+          }
+        ]
       },
       {
         "name": "Ezra Zygmuntowicz",
@@ -43,7 +99,21 @@
         "userType": "User",
         "repositories": 22,
         "repos_url": "https://api.github.com/users/ezmobius/repos",
-        "userName": "ezmobius"
+        "userName": "ezmobius",
+        "repositoriesInfo": [
+          {
+            "repo_name": "acl_system2",
+            "repo_url": "https://github.com/ezmobius/acl_system2"
+          },
+          {
+            "repo_name": "bmhsearch",
+            "repo_url": "https://github.com/ezmobius/bmhsearch"
+          },
+          {
+            "repo_name": "chef-101",
+            "repo_url": "https://github.com/ezmobius/chef-101"
+          }
+        ]
       },
       {
         "name": "Michael D. Ivey",
@@ -52,7 +122,21 @@
         "userType": "User",
         "repositories": 88,
         "repos_url": "https://api.github.com/users/ivey/repos",
-        "userName": "ivey"
+        "userName": "ivey",
+        "repositoriesInfo": [
+          {
+            "repo_name": "adventure_cats",
+            "repo_url": "https://github.com/ivey/adventure_cats"
+          },
+          {
+            "repo_name": "anaconda",
+            "repo_url": "https://github.com/ivey/anaconda"
+          },
+          {
+            "repo_name": "ascii",
+            "repo_url": "https://github.com/ivey/ascii"
+          }
+        ]
       },
       {
         "name": "Evan Phoenix",
@@ -61,7 +145,21 @@
         "userType": "User",
         "repositories": 167,
         "repos_url": "https://api.github.com/users/evanphx/repos",
-        "userName": "evanphx"
+        "userName": "evanphx",
+        "repositoriesInfo": [
+          {
+            "repo_name": "ace",
+            "repo_url": "https://github.com/evanphx/ace"
+          },
+          {
+            "repo_name": "alexa",
+            "repo_url": "https://github.com/evanphx/alexa"
+          },
+          {
+            "repo_name": "amqp",
+            "repo_url": "https://github.com/evanphx/amqp"
+          }
+        ]
       },
       {
         "name": "Chris Van Pelt",
@@ -70,7 +168,21 @@
         "userType": "User",
         "repositories": 56,
         "repos_url": "https://api.github.com/users/vanpelt/repos",
-        "userName": "vanpelt"
+        "userName": "vanpelt",
+        "repositoriesInfo": [
+          {
+            "repo_name": "amqp",
+            "repo_url": "https://github.com/vanpelt/amqp"
+          },
+          {
+            "repo_name": "analytics-ruby",
+            "repo_url": "https://github.com/vanpelt/analytics-ruby"
+          },
+          {
+            "repo_name": "api-blueprint",
+            "repo_url": "https://github.com/vanpelt/api-blueprint"
+          }
+        ]
       },
       {
         "name": "Wayne E. Seguin",
@@ -79,7 +191,21 @@
         "userType": "User",
         "repositories": 97,
         "repos_url": "https://api.github.com/users/wayneeseguin/repos",
-        "userName": "wayneeseguin"
+        "userName": "wayneeseguin",
+        "repositoriesInfo": [
+          {
+            "repo_name": "afero",
+            "repo_url": "https://github.com/wayneeseguin/afero"
+          },
+          {
+            "repo_name": "alogr",
+            "repo_url": "https://github.com/wayneeseguin/alogr"
+          },
+          {
+            "repo_name": "appfirst-boshrelease",
+            "repo_url": "https://github.com/wayneeseguin/appfirst-boshrelease"
+          }
+        ]
       },
       {
         "name": "Bryan Helmkamp",
@@ -88,7 +214,21 @@
         "userType": "User",
         "repositories": 165,
         "repos_url": "https://api.github.com/users/brynary/repos",
-        "userName": "brynary"
+        "userName": "brynary",
+        "repositoriesInfo": [
+          {
+            "repo_name": "active_admin",
+            "repo_url": "https://github.com/brynary/active_admin"
+          },
+          {
+            "repo_name": "active_merchant",
+            "repo_url": "https://github.com/brynary/active_merchant"
+          },
+          {
+            "repo_name": "acts-as-taggable-on",
+            "repo_url": "https://github.com/brynary/acts-as-taggable-on"
+          }
+        ]
       },
       {
         "name": "Kevin Clark",
@@ -97,7 +237,21 @@
         "userType": "User",
         "repositories": 37,
         "repos_url": "https://api.github.com/users/kevinclark/repos",
-        "userName": "kevinclark"
+        "userName": "kevinclark",
+        "repositoriesInfo": [
+          {
+            "repo_name": "AdventOfCode2020",
+            "repo_url": "https://github.com/kevinclark/AdventOfCode2020"
+          },
+          {
+            "repo_name": "ale",
+            "repo_url": "https://github.com/kevinclark/ale"
+          },
+          {
+            "repo_name": "aletheia",
+            "repo_url": "https://github.com/kevinclark/aletheia"
+          }
+        ]
       },
       {
         "name": null,
@@ -106,7 +260,21 @@
         "userType": "User",
         "repositories": 178,
         "repos_url": "https://api.github.com/users/technoweenie/repos",
-        "userName": "technoweenie"
+        "userName": "technoweenie",
+        "repositoriesInfo": [
+          {
+            "repo_name": "-Covid-Vaccine-Scheduling-Tips",
+            "repo_url": "https://github.com/technoweenie/-Covid-Vaccine-Scheduling-Tips"
+          },
+          {
+            "repo_name": "15",
+            "repo_url": "https://github.com/technoweenie/15"
+          },
+          {
+            "repo_name": "activesupport_notifications_backport",
+            "repo_url": "https://github.com/technoweenie/activesupport_notifications_backport"
+          }
+        ]
       },
       {
         "name": "Marc-André Cournoyer",
@@ -115,7 +283,21 @@
         "userType": "User",
         "repositories": 60,
         "repos_url": "https://api.github.com/users/macournoyer/repos",
-        "userName": "macournoyer"
+        "userName": "macournoyer",
+        "repositoriesInfo": [
+          {
+            "repo_name": "bingo",
+            "repo_url": "https://github.com/macournoyer/bingo"
+          },
+          {
+            "repo_name": "cache_digests",
+            "repo_url": "https://github.com/macournoyer/cache_digests"
+          },
+          {
+            "repo_name": "confoo",
+            "repo_url": "https://github.com/macournoyer/confoo"
+          }
+        ]
       },
       {
         "name": "Toby Sterrett",
@@ -124,7 +306,21 @@
         "userType": "User",
         "repositories": 19,
         "repos_url": "https://api.github.com/users/takeo/repos",
-        "userName": "takeo"
+        "userName": "takeo",
+        "repositoriesInfo": [
+          {
+            "repo_name": "Brief",
+            "repo_url": "https://github.com/takeo/Brief"
+          },
+          {
+            "repo_name": "ChromeAutoTextExpander",
+            "repo_url": "https://github.com/takeo/ChromeAutoTextExpander"
+          },
+          {
+            "repo_name": "GoogleAnalyticsProxy",
+            "repo_url": "https://github.com/takeo/GoogleAnalyticsProxy"
+          }
+        ]
       },
       {
         "name": "Justin Palmer",
@@ -133,7 +329,21 @@
         "userType": "User",
         "repositories": 147,
         "repos_url": "https://api.github.com/users/caged/repos",
-        "userName": "caged"
+        "userName": "caged",
+        "repositoriesInfo": [
+          {
+            "repo_name": "airstream",
+            "repo_url": "https://github.com/caged/airstream"
+          },
+          {
+            "repo_name": "aixmlserialize",
+            "repo_url": "https://github.com/caged/aixmlserialize"
+          },
+          {
+            "repo_name": "asset",
+            "repo_url": "https://github.com/caged/asset"
+          }
+        ]
       },
       {
         "name": "Geoffrey Grosenbach",
@@ -142,7 +352,21 @@
         "userType": "User",
         "repositories": 81,
         "repos_url": "https://api.github.com/users/topfunky/repos",
-        "userName": "topfunky"
+        "userName": "topfunky",
+        "repositoriesInfo": [
+          {
+            "repo_name": "ar_fixtures",
+            "repo_url": "https://github.com/topfunky/ar_fixtures"
+          },
+          {
+            "repo_name": "basic_model",
+            "repo_url": "https://github.com/topfunky/basic_model"
+          },
+          {
+            "repo_name": "bigapp",
+            "repo_url": "https://github.com/topfunky/bigapp"
+          }
+        ]
       },
       {
         "name": "Jesse Andrews",
@@ -151,7 +375,21 @@
         "userType": "User",
         "repositories": 116,
         "repos_url": "https://api.github.com/users/anotherjesse/repos",
-        "userName": "anotherjesse"
+        "userName": "anotherjesse",
+        "repositoriesInfo": [
+          {
+            "repo_name": "3monkey",
+            "repo_url": "https://github.com/anotherjesse/3monkey"
+          },
+          {
+            "repo_name": "ansible",
+            "repo_url": "https://github.com/anotherjesse/ansible"
+          },
+          {
+            "repo_name": "ansible-playbook-gitlab",
+            "repo_url": "https://github.com/anotherjesse/ansible-playbook-gitlab"
+          }
+        ]
       },
       {
         "name": "Roland",
@@ -160,7 +398,21 @@
         "userType": "User",
         "repositories": 7,
         "repos_url": "https://api.github.com/users/roland/repos",
-        "userName": "roland"
+        "userName": "roland",
+        "repositoriesInfo": [
+          {
+            "repo_name": "Carousel",
+            "repo_url": "https://github.com/roland/Carousel"
+          },
+          {
+            "repo_name": "formflow",
+            "repo_url": "https://github.com/roland/formflow"
+          },
+          {
+            "repo_name": "HttpBuildQuery",
+            "repo_url": "https://github.com/roland/HttpBuildQuery"
+          }
+        ]
       },
       {
         "name": "Lukas Biewald",
@@ -169,7 +421,21 @@
         "userType": "User",
         "repositories": 30,
         "repos_url": "https://api.github.com/users/lukas/repos",
-        "userName": "lukas"
+        "userName": "lukas",
+        "repositoriesInfo": [
+          {
+            "repo_name": "audio-super-res",
+            "repo_url": "https://github.com/lukas/audio-super-res"
+          },
+          {
+            "repo_name": "basic-yolo-keras",
+            "repo_url": "https://github.com/lukas/basic-yolo-keras"
+          },
+          {
+            "repo_name": "car-project",
+            "repo_url": "https://github.com/lukas/car-project"
+          }
+        ]
       },
       {
         "name": null,
@@ -178,7 +444,8 @@
         "userType": "User",
         "repositories": 0,
         "repos_url": "https://api.github.com/users/fanvsfan/repos",
-        "userName": "fanvsfan"
+        "userName": "fanvsfan",
+        "repositoriesInfo": []
       },
       {
         "name": "Tom ten Thij",
@@ -187,7 +454,21 @@
         "userType": "User",
         "repositories": 83,
         "repos_url": "https://api.github.com/users/tomtt/repos",
-        "userName": "tomtt"
+        "userName": "tomtt",
+        "repositoriesInfo": [
+          {
+            "repo_name": "afg",
+            "repo_url": "https://github.com/tomtt/afg"
+          },
+          {
+            "repo_name": "ahoy",
+            "repo_url": "https://github.com/tomtt/ahoy"
+          },
+          {
+            "repo_name": "angular-beatbox",
+            "repo_url": "https://github.com/tomtt/angular-beatbox"
+          }
+        ]
       },
       {
         "name": null,
@@ -196,7 +477,8 @@
         "userType": "User",
         "repositories": 0,
         "repos_url": "https://api.github.com/users/railsjitsu/repos",
-        "userName": "railsjitsu"
+        "userName": "railsjitsu",
+        "repositoriesInfo": []
       },
       {
         "name": "Nitay Joffe",
@@ -205,7 +487,21 @@
         "userType": "User",
         "repositories": 8,
         "repos_url": "https://api.github.com/users/nitay/repos",
-        "userName": "nitay"
+        "userName": "nitay",
+        "repositoriesInfo": [
+          {
+            "repo_name": "ai-deadlines",
+            "repo_url": "https://github.com/nitay/ai-deadlines"
+          },
+          {
+            "repo_name": "ImportJSON",
+            "repo_url": "https://github.com/nitay/ImportJSON"
+          },
+          {
+            "repo_name": "IMPORTJSONAPI",
+            "repo_url": "https://github.com/nitay/IMPORTJSONAPI"
+          }
+        ]
       },
       {
         "name": "Kevin Williams",
@@ -214,7 +510,21 @@
         "userType": "User",
         "repositories": 41,
         "repos_url": "https://api.github.com/users/kevwil/repos",
-        "userName": "kevwil"
+        "userName": "kevwil",
+        "repositoriesInfo": [
+          {
+            "repo_name": "aspen",
+            "repo_url": "https://github.com/kevwil/aspen"
+          },
+          {
+            "repo_name": "c-ration",
+            "repo_url": "https://github.com/kevwil/c-ration"
+          },
+          {
+            "repo_name": "c-ration-sample",
+            "repo_url": "https://github.com/kevwil/c-ration-sample"
+          }
+        ]
       },
       {
         "name": "Dave Fayram",
@@ -223,7 +533,21 @@
         "userType": "User",
         "repositories": 78,
         "repos_url": "https://api.github.com/users/KirinDave/repos",
-        "userName": "KirinDave"
+        "userName": "KirinDave",
+        "repositoriesInfo": [
+          {
+            "repo_name": "arc",
+            "repo_url": "https://github.com/KirinDave/arc"
+          },
+          {
+            "repo_name": "atm6-sky",
+            "repo_url": "https://github.com/KirinDave/atm6-sky"
+          },
+          {
+            "repo_name": "aws",
+            "repo_url": "https://github.com/KirinDave/aws"
+          }
+        ]
       },
       {
         "name": "James Golick",
@@ -232,7 +556,21 @@
         "userType": "User",
         "repositories": 110,
         "repos_url": "https://api.github.com/users/jamesgolick/repos",
-        "userName": "jamesgolick"
+        "userName": "jamesgolick",
+        "repositoriesInfo": [
+          {
+            "repo_name": "action_mailer_verp",
+            "repo_url": "https://github.com/jamesgolick/action_mailer_verp"
+          },
+          {
+            "repo_name": "action_messager",
+            "repo_url": "https://github.com/jamesgolick/action_messager"
+          },
+          {
+            "repo_name": "activerecordless_migrations",
+            "repo_url": "https://github.com/jamesgolick/activerecordless_migrations"
+          }
+        ]
       },
       {
         "name": "Corey Donohoe",
@@ -241,7 +579,21 @@
         "userType": "User",
         "repositories": 168,
         "repos_url": "https://api.github.com/users/atmos/repos",
-        "userName": "atmos"
+        "userName": "atmos",
+        "repositoriesInfo": [
+          {
+            "repo_name": "aloha_2009",
+            "repo_url": "https://github.com/atmos/aloha_2009"
+          },
+          {
+            "repo_name": "appsly-android-rest",
+            "repo_url": "https://github.com/atmos/appsly-android-rest"
+          },
+          {
+            "repo_name": "as_time_goes_by",
+            "repo_url": "https://github.com/atmos/as_time_goes_by"
+          }
+        ]
       },
       {
         "name": null,
@@ -250,7 +602,17 @@
         "userType": "Organization",
         "repositories": 2,
         "repos_url": "https://api.github.com/users/errfree/repos",
-        "userName": "errfree"
+        "userName": "errfree",
+        "repositoriesInfo": [
+          {
+            "repo_name": "test",
+            "repo_url": "https://github.com/errfree/test"
+          },
+          {
+            "repo_name": "test1",
+            "repo_url": "https://github.com/errfree/test1"
+          }
+        ]
       },
       {
         "name": "Seth Fitzsimmons",
@@ -259,7 +621,21 @@
         "userType": "User",
         "repositories": 314,
         "repos_url": "https://api.github.com/users/mojodna/repos",
-        "userName": "mojodna"
+        "userName": "mojodna",
+        "repositoriesInfo": [
+          {
+            "repo_name": "AaronCam",
+            "repo_url": "https://github.com/mojodna/AaronCam"
+          },
+          {
+            "repo_name": "abaculus",
+            "repo_url": "https://github.com/mojodna/abaculus"
+          },
+          {
+            "repo_name": "accelerometer",
+            "repo_url": "https://github.com/mojodna/accelerometer"
+          }
+        ]
       },
       {
         "name": "Blake Mizerany",
@@ -268,7 +644,21 @@
         "userType": "User",
         "repositories": 158,
         "repos_url": "https://api.github.com/users/bmizerany/repos",
-        "userName": "bmizerany"
+        "userName": "bmizerany",
+        "repositoriesInfo": [
+          {
+            "repo_name": "amazon-ec2",
+            "repo_url": "https://github.com/bmizerany/amazon-ec2"
+          },
+          {
+            "repo_name": "amqp",
+            "repo_url": "https://github.com/bmizerany/amqp"
+          },
+          {
+            "repo_name": "assert",
+            "repo_url": "https://github.com/bmizerany/assert"
+          }
+        ]
       }
   ]
 }
