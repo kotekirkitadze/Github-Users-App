@@ -1,17 +1,7 @@
 <app-header></app-header>
-
 <div [@slideInAnimation]="o.isActivated ? o.activatedRoute: ''">
   <router-outlet class="whole" #o='outlet'></router-outlet>
 </div>
 <div class="loading-container">
     <mat-spinner class="spinner" *ngIf="loading"></mat-spinner>
 </div>
-
-
-<!-- <div class="loading-container">
-  <div class="loading">
-    <div class="sk-chase">
-      <mat-spinner class="" *ngIf="loading"></mat-spinner>
-    </div>
-  </div>
-</div> -->
