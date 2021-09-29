@@ -1,38 +1,32 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { ApiService } from 'src/app/services/api.service';
-import { UserResolved, userWithOrganization } from '../../models/model'
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
+import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-user-details',
   templateUrl: './user-details.component.html',
-  styleUrls: ['./user-details.component.css']
+  styleUrls: ['./user-details.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserDetailsComponent implements OnInit {
-
-  constructor(private activatedRoute: ActivatedRoute,
-    private apiService: ApiService,
-    private route: Router) {
-
-    this.activatedRoute.paramMap.subscribe(d => {
-      this.data = this.activatedRoute.snapshot.data['userResolvedData'];
-    })
-
-  }
-
   userName: string;
-  data: UserResolved;
+  data: Observable<any>;
+
+  private userSelectedSubject = new BehaviorSubject<number>(0);
+  userSelectedAction$ = this.userSelectedSubject.asObservable();
+
+  constructor(private activatedRoute: ActivatedRoute) {
+    this.activatedRoute.paramMap.subscribe(d => {
+      this.userSelectedSubject.next(1);
+      this.data = combineLatest([
+        of(this.activatedRoute.snapshot.data['userResolvedData']),
+        this.userSelectedAction$
+      ]).pipe(
+        map(([data, _]) => data)
+      );
+    })
+  }
 
   ngOnInit(): void {
-
-    console.log(this.data)
   }
-
-  get getUserData() {
-    return this.apiService.getUser(this.userName);
-  }
-
-  // toOrgPage(url: string) {
-  //   this.route.navigate([url])
-  // }
-
 }
