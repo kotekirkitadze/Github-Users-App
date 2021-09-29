@@ -1,4 +1,4 @@
-<header>
+<!-- <header>
   <h1 routerLink="">GitHub Users</h1>
 </header>
 
@@ -8,5 +8,24 @@
         {{option}}
       </mat-option>
     </mat-autocomplete>
+  -->
 
-{{searchVal }}
+   <nav>
+        <ul>
+            <li class="logo" routerLink="">Github Users</li>
+            <div class="items">
+
+            </div>
+            <li class="search-icon">
+                <input type="text" placeholder="Search User"  [matAutocomplete]="auto" [(ngModel)]="searchVal">
+                <mat-autocomplete #auto="matAutocomplete">
+                  <mat-option class="options" *ngFor="let option of options" [value]="option">
+                    {{option}}
+                  </mat-option>
+                </mat-autocomplete>
+                <label class="icon">
+                    <span class="fa fa-search"><fa-icon class="awesomeSearch" [icon]="faSearch"></fa-icon></span>
+                </label>
+            </li>
+        </ul>
+    </nav>
