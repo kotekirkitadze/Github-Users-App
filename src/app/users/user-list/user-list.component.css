@@ -12,13 +12,14 @@
 	grid-gap: 2rem;
 	margin: 2rem;
   margin-top: 2rem;
+  transition-duration: 0.3s;
 }
 
 .wrapper-flex{
 	display: flex;
 	flex-direction: column;
-	margin-bottom: 30px;
 	padding: 1rem;
+  transition-duration: 0.3s;
 }
 
 .container{
@@ -28,18 +29,20 @@
 	position: relative;
 	overflow: hidden;
   transition-duration: 0.3s;
+  cursor: pointer;
 }
 
 .containerForListView{
   box-shadow: 0px 2px 8px 0px grey;
 	border-radius: 1rem;
-	margin-bottom: 1rem;
+  cursor: pointer;
 	position: relative;
 	overflow: hidden;
 	width: 70%;
 	height: 200px;
 	position: relative;
 	margin: 0 auto;
+  margin-bottom: 1rem;
 	background-position: right;
 	background-size: cover;
   transition-duration: 0.3s;

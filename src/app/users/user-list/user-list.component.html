@@ -6,10 +6,10 @@
   currentPage: page, totalItems: totalLength}"
   [user]="item"
   [mode]="mode"
+  [routerLink]="['/users', item.userName]"
   (emitValue)="toDetails($event)"></app-user-item>
 </div>
 
 <div class="pagBtns">
-
   <pagination-controls (pageChange)="page = $event"></pagination-controls>
 </div>
