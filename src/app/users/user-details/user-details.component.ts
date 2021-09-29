@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { UserResolved, userWithOrganization } from '../../models/model'
 @Component({
@@ -10,7 +10,8 @@ import { UserResolved, userWithOrganization } from '../../models/model'
 export class UserDetailsComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute,
-    private apiService: ApiService) {
+    private apiService: ApiService,
+    private route: Router) {
 
     this.data = this.activatedRoute.snapshot.data['userResolvedData'];
   }
@@ -26,5 +27,9 @@ export class UserDetailsComponent implements OnInit {
   get getUserData() {
     return this.apiService.getUser(this.userName);
   }
+
+  // toOrgPage(url: string) {
+  //   this.route.navigate([url])
+  // }
 
 }

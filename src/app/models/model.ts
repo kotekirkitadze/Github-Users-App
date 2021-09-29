@@ -10,6 +10,7 @@ export interface UserApi {
   organizations_url?: string;
   followers: string;
   created_at: string;
+  html_url?: string;
 }
 
 
@@ -24,6 +25,7 @@ export interface User {
   repositoriesInfo?: Repository[];
   followers?: string;
   created_at?: string;
+  githubURL?: string;
 }
 
 export interface RepositoryApi {

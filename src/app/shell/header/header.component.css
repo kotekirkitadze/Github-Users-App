@@ -2,5 +2,9 @@ h1{
   background-color: rgb(41, 39, 39);
   color: white;
   padding: 20px 50px;
+  cursor: pointer;
 }
 
+h1:hover {
+  color: beige;
+}

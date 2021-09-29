@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { forkJoin, Observable } from 'rxjs';
-import { filter, tap, map, switchMap, shareReplay } from 'rxjs/operators';
-import { UserApi, User, OrganizationAPi, userWithOrganization } from '../models/model';
+import { EMPTY, forkJoin, Observable, of } from 'rxjs';
+import { filter, tap, map, switchMap, shareReplay, catchError } from 'rxjs/operators';
+import { UserApi, User, OrganizationAPi, userWithOrganization, RepositoryApi } from '../models/model';
 
 @Injectable({
   providedIn: 'root'
@@ -67,13 +67,13 @@ export class ApiService {
   getUser(userName: string): Observable<any> {
     return this.http.get<UserApi>(`${this.apiUrl}/${userName}`)
       .pipe(
-        tap(d => console.log(d.organizations_url)),
+        tap(d => console.log("uder data", d)),
         switchMap(data => {
           return this.makeApiRequest(data.organizations_url)
             .pipe(
               switchMap((firstOrgData: { url?: string }) => {
-                console.log("dda", firstOrgData)
-                return this.makeApiRequest(firstOrgData[0].url).pipe(
+                return this.makeApiRequest(firstOrgData[0]?.url).pipe(
+                  catchError(err => of(EMPTY)),
                   map((finalOrgData: OrganizationAPi) => {
                     return {
                       name: data.name,
@@ -87,15 +87,37 @@ export class ApiService {
                       organization_site: finalOrgData.html_url,
                       organization_picture: finalOrgData.avatar_url,
                       followers: data.followers,
-                      created_at: data.created_at
+                      created_at: data.created_at,
+                      githubURL: data.html_url
                     }
                   })
                 )
               })
             )
-        })
+        }),
+        switchMap(data => {
+          return this.makeApiRequest(data.repos_url)
+            .pipe(
+              map((element: RepositoryApi[]) =>
+                element.filter((_, i) => i <= 2).map(rep => {
+                  return {
+                    repo_name: rep.name,
+                    repo_url: rep.html_url
+                  }
+                })),
+              map(repoInfo => {
+                return {
+                  ...data,
+                  repositoriesInfo: repoInfo
+                }
+              })
+            )
+        }),
+        tap(d => console.log("hello", d))
       );
   }
+
+
 
 
   makeApiRequest(url: string) {

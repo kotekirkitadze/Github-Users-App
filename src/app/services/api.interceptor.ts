@@ -6,7 +6,7 @@ import { Observable } from "rxjs";
 export class ApiInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     console.log("hi hi")
-    const TOKEN = "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";
+    const TOKEN = "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";
     let jsonReq: HttpRequest<any> = req.clone({
       headers: req.headers.set("Authorization",
         "Bearer " + TOKEN)

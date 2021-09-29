@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.apiService.getUsers().subscribe(console.log);
+    // this.apiService.getUsersOriginal().subscribe(console.log);
   }
 
 }
