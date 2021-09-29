@@ -6,7 +6,6 @@ import {
   NavigationError,
   NavigationCancel
 } from '@angular/router';
-import { ApiService } from './services/api.service';
 import { slideInAnimation } from './app.animation'
 
 @Component({
@@ -19,8 +18,7 @@ export class AppComponent implements OnInit {
   title = 'githubUsers';
   loading = true;
 
-  constructor(private apiService: ApiService,
-    private router: Router) {
+  constructor(private router: Router) {
     router.events.subscribe((routerEvent: Event) => {
       this.checkRouterEvent(routerEvent);
     })
@@ -39,7 +37,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.apiService.getUsersOriginal().subscribe(console.log);
+
   }
 
 }

@@ -16,7 +16,7 @@ export class UserDetailsComponent implements OnInit {
   userSelectedAction$ = this.userSelectedSubject.asObservable();
 
   constructor(private activatedRoute: ActivatedRoute) {
-    this.activatedRoute.paramMap.subscribe(d => {
+    this.activatedRoute.paramMap.subscribe(() => {
       this.userSelectedSubject.next(1);
       this.data = combineLatest([
         of(this.activatedRoute.snapshot.data['userResolvedData']),
@@ -29,4 +29,5 @@ export class UserDetailsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
 }

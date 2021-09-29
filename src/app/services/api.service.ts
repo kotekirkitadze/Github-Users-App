@@ -1,8 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { EMPTY, forkJoin, Observable, of } from 'rxjs';
-import { filter, tap, map, switchMap, shareReplay, catchError } from 'rxjs/operators';
-import { UserApi, User, OrganizationAPi, userWithOrganization, RepositoryApi } from '../models/model';
+import {
+  tap,
+  map,
+  switchMap,
+  catchError
+} from 'rxjs/operators';
+import {
+  UserApi,
+  User,
+  OrganizationAPi,
+  RepositoryApi
+} from '../models/model';
 
 @Injectable({
   providedIn: 'root'

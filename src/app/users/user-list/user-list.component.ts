@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { map, shareReplay, tap } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { UserApi, User } from 'src/app/models/model';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.css']
+  styleUrls: ['./user-list.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserListComponent implements OnInit {
 
@@ -20,7 +21,7 @@ export class UserListComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.getUsers().subscribe(d => {
+    this.getUsers.subscribe(d => {
       this.users = d;
       console.log(d)
     })
@@ -28,7 +29,7 @@ export class UserListComponent implements OnInit {
 
   users: User[];
 
-  getUsers(): Observable<User[]> {
+  get getUsers(): Observable<User[]> {
     return this.apiService.getUsers();
   }
 

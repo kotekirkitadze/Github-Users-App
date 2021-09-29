@@ -18,11 +18,8 @@ export class HeaderComponent implements OnInit {
 
   myControl = new FormControl();
   filteredOptions: Observable<string[]>;
-
   faSearch = faSearch;
-
   lastThreeOptions: string[] = [];
-
   errorVal: string;
 
   constructor(private storage: StorageService,

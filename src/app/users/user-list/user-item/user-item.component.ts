@@ -1,11 +1,11 @@
-import { ThisReceiver } from '@angular/compiler';
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { User } from 'src/app/models/model';
 
 @Component({
   selector: 'app-user-item',
   templateUrl: './user-item.component.html',
-  styleUrls: ['./user-item.component.css']
+  styleUrls: ['./user-item.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserItemComponent implements OnInit {
 
