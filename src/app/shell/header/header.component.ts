@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  options: string[] = ["kote", "kotiko", "konstantine"];
+  searchVal;
   constructor() { }
 
   ngOnInit(): void {

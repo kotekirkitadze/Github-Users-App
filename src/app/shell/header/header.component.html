@@ -1,3 +1,12 @@
 <header>
   <h1 routerLink="">GitHub Users</h1>
 </header>
+
+    <input type="text" matInput [matAutocomplete]="auto" [(ngModel)]="searchVal">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of options" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+
+{{searchVal }}

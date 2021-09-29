@@ -5,7 +5,7 @@
 
 <div class="wrapper-grid"  >
     <app-user-item class="container" *ngFor="let item of users | paginate: {
-  itemsPerPage: 12,
+  itemsPerPage: 8,
   currentPage: page, totalItems: totalLength}"
   [user]="item"
   (emitValue)="toDetails($event)"></app-user-item>
