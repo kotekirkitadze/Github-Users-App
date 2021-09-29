@@ -1,10 +1,11 @@
-<div class="banner-img"></div>
-<img src="{{user.pic_url}}" alt="Profile Image" class="profile-img">
+<div [ngClass]="[mode? 'banner-img': 'banner-imgForListView']"></div>
+<img src="{{user.pic_url}}" alt="Profile Image"
+[ngClass]="[mode ? 'profile-img' : 'profile-imgForListView']">
 <div>
-  <a class="name" (click)="emit(user.userName)"><h1>{{user.name}}</h1></a>
-  <span>{{user.userType}}</span>
-  <div>
-    <p class="description">Number of repositories: {{user.repositories ? user.repositories: 0 }}</p>
+<p [ngClass]="[ !mode ? 'modeList' : '']">{{user.userType}}</p>
+  <div [ngClass]="{'infoDiv': !mode}">
+      <a [ngClass]="[mode? 'name' : 'nameForListView']" (click)="emit(user.userName)"><h1>{{user.name}}</h1></a>
+    <p [ngClass]="[mode ? 'description' : 'descriptionForListView']">Number of repositories: {{user.repositories ? user.repositories: 0 }}</p>
     <div class="repoInfo"*ngIf="user.repositoriesInfo[0]">
         <h5>First three repo:</h5>
         <p class="repoNames" *ngFor="let el of user.repositoriesInfo; let i = index">{{i+1}}.

@@ -1,13 +1,11 @@
- <!-- <div class="search-box">
-        <input class="search-txt" type="text" name="" placeholder="Type to search">
-        <a href="#a" class="search-btn">ss</a>
-</div> -->
+ <button (click)="changeMode()">switcher</button>
 
- <div class="wrapper-grid"  >
-    <app-user-item class="container" *ngFor="let item of users | paginate: {
-  itemsPerPage: 8,
+ <div [ngClass]="[mode ? 'wrapper-grid' : 'wrapper-flex']"  >
+    <app-user-item [ngClass]="[mode ? 'container': 'containerForListView']" *ngFor="let item of users | paginate: {
+                itemsPerPage: 8,
   currentPage: page, totalItems: totalLength}"
   [user]="item"
+  [mode]="mode"
   (emitValue)="toDetails($event)"></app-user-item>
 </div>
 

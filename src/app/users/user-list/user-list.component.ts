@@ -9,9 +9,10 @@ import { ApiService } from 'src/app/services/api.service';
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserListComponent implements OnInit {
+  mode: boolean = false;
 
   constructor(private apiService: ApiService,
     private router: Router) { }
@@ -19,6 +20,9 @@ export class UserListComponent implements OnInit {
   totalLength: any;
   page: number = 1;
 
+  changeMode(): void {
+    this.mode = !this.mode;
+  }
 
   ngOnInit(): void {
     this.getUsers.subscribe(d => {

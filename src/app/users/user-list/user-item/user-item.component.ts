@@ -10,6 +10,7 @@ import { User } from 'src/app/models/model';
 export class UserItemComponent implements OnInit {
 
   @Input() user: User;
+  @Input() mode: boolean;
   @Output() emitValue = new EventEmitter<string>()
   constructor() { }
 
