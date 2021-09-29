@@ -4,6 +4,8 @@ import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { StorageService } from 'src/app/services/storage.service';
+import { ApiService } from 'src/app/services/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -19,29 +21,30 @@ export class HeaderComponent implements OnInit {
 
   faSearch = faSearch;
 
-  lastThree: string[] = [];
-  options: string[] = this.lastThree;
+  lastThreeOptions: string[] = [];
 
   errorVal: string;
 
-  constructor(private storage: StorageService) { }
+  constructor(private storage: StorageService,
+    private apiService: ApiService,
+    private route: Router) { }
 
 
   pushInStorage(name: string) {
-    if (this.lastThree.length < 3) {
-      this.lastThree.unshift(name);
+    if (this.lastThreeOptions.length < 3) {
+      this.lastThreeOptions.unshift(name);
       this.storage.set<string[]>(
         'lastThreeSearches',
-        this.lastThree
+        this.lastThreeOptions
       );
       return;
     }
 
-    this.lastThree.splice(2, 1);
-    this.lastThree.unshift(name);
+    this.lastThreeOptions.splice(2, 1);
+    this.lastThreeOptions.unshift(name);
     this.storage.set<string[]>(
       'lastThreeSearches',
-      this.lastThree
+      this.lastThreeOptions
     )
   }
 
@@ -53,16 +56,24 @@ export class HeaderComponent implements OnInit {
     }
 
     this.pushInStorage(controlVal)
-    this.options = this.lastThree;
+    this.route.navigate(['/users', controlVal]);
+    this.myControl.setValue('');
+  }
 
-    console.log(this.lastThree)
+  searchFromOption(value: string) {
+    this.route.navigate(['/users', value]);
+    this.myControl.setValue('');
+  }
+
+  searchUser(userName: string) {
+    return this.apiService.getUser(userName);
   }
 
   restoreSearches() {
     const dataFromStorage = this.storage
       .get<string[]>('lastThreeSearches');
     if (dataFromStorage?.length > 0) {
-      this.lastThree = dataFromStorage;
+      this.lastThreeOptions = dataFromStorage;
     }
   }
 
@@ -78,7 +89,7 @@ export class HeaderComponent implements OnInit {
 
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
-    return this.options.filter(option =>
+    return this.lastThreeOptions.filter(option =>
       option.toLowerCase().includes(filterValue))
   }
 

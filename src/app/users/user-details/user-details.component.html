@@ -1,17 +1,16 @@
 <div class="container" *ngIf="data.user">
   <div class="containerMain">
     <div class="box">
-        <div class="image">
+        <div class="image imageContainer">
             <img class="image" src="{{data.user.pic_url}}" alt="User's picture">
+             <h3 class="userType">{{data['user'].userType}}</h3>
         </div>
         <div class="details">
           <h1><a href="{{data['user'].githubURL}}" target="_blank">{{data['user'].name}}</a></h1>
-          <p>User Type: {{data['user'].userType}}</p>
-          <p>Account Created at: {{data['user'].created_at}}</p>
-          <p>Email {{data['user'].email}}</p>
+          <p *ngIf="data['user'].email">Email {{data['user'].email}}</p>
           <p *ngIf="data['user'].userName">Github Username: {{data['user'].userName}}</p>
           <p>Followers: {{data['user'].followers}}</p>
-          <p>Account Created at: {{data['user'].created_at}}</p>
+          <p>Account Created at: {{data['user'].created_at | date}}</p>
           <p>First Three repos' name:
             <span *ngFor="let repo of data['user'].repositoriesInfo">
                   <a href="{{repo.repo_url}}" target="_blank">{{repo.repo_name}} </a>,
@@ -24,7 +23,7 @@
               <img src="{{data.user.organization_picture}}">
             </a>
           </div>
-          <a routerLink="" class="btn"> Back</a>
+          <a routerLink="" class="btn">Back</a>
         </div>
     </div>
   </div>

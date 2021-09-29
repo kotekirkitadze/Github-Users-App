@@ -23,7 +23,7 @@ h1 {
     font-size: 3rem;
     font-weight: 700;
     letter-spacing: 8px;
-    margin-top: 10px;
+    margin-top: 35px;
     margin-bottom: 2rem;
 }
 
@@ -36,6 +36,19 @@ h2{
 .image {
     /* margin-top: 4rem;
     margin-bottom: 5rem; */
+}
+
+.userType{
+  margin-left: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 25px;
+  width: 70%;
+  font-size: 35px;
+  margin-top: -95px;
+  color: #dadada;
+  background-color: #115c21;
+  box-shadow: 0px 2px 8px 0px rgb(139, 59, 59);
 }
 
 p{
@@ -52,26 +65,34 @@ p{
   box-shadow: 0px 2px 8px 0px grey;
   margin-left: 190px;
   width: 220%;
-  height: auto;
+  height: 500px;
   background-color: #f6f6f6;
+  position: relative;
 }
 
 
 .btn {
-    display: inline-block;
-
-    padding: 1.7rem 5.5rem;
-    background: #f6f6f6;
+    /* display: block; */
+    /* padding: 1.7rem 5.5rem; */
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background: #e4dfdf;
     font-size: 2rem;
     text-decoration: none;
     color: #398f51;
     border-radius: 10px;
     transition: background 0.5s;
+    margin-top: 12rem;
+    width: 120px;
+    text-align: center;
 
+    position: absolute;
+    bottom: 20px;
+    left: 45%;
 }
 
 .btn:hover {
-    background: #dadada;
+    background: #c9c4c4;
 }
 
 .image {
@@ -107,7 +128,55 @@ a:link {
 }
 
 .orgDiv img {
-  width: 50px;
+  width: 65px;
   margin-top: -28px;
   cursor: pointer;
+  position: absolute;
+  left: 220px;
+}
+
+.imageContainer{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+
+@media screen and (max-width: 1151px){
+    .box{
+        display: flex;
+        flex-direction: column;
+    }
+    .btn{
+      left: 40%;
+    }
+
+    .details{
+      width: 80%;
+      margin: 0 auto;
+      margin-top: -6rem;
+    }
+
+    .image {
+        margin-top: 20px;
+        border-radius: 120px;
+        width: 55%;
+        /* margin-bottom: 90px; */
+    }
+
+    .imageContainer{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+
+    .userType{
+        width: 40%;
+        font-size: 35px;
+        margin-left: 10px;
+        color: #dadada;
+        background-color: #115c21;
+        box-shadow: 0px 2px 8px 0px rgb(139, 59, 59);
+      }
 }

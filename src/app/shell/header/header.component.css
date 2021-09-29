@@ -121,3 +121,9 @@ nav ul .search-icon .icon span {
         flex: 4;
     }
 }
+
+/* @media screen and (max-width: 464px){
+     nav ul .search-icon input {
+      width: px;
+     }
+} */

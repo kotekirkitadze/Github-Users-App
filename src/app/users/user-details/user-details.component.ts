@@ -13,7 +13,10 @@ export class UserDetailsComponent implements OnInit {
     private apiService: ApiService,
     private route: Router) {
 
-    this.data = this.activatedRoute.snapshot.data['userResolvedData'];
+    this.activatedRoute.paramMap.subscribe(d => {
+      this.data = this.activatedRoute.snapshot.data['userResolvedData'];
+    })
+
   }
 
   userName: string;
