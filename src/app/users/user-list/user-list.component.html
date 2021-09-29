@@ -3,7 +3,7 @@
         <a href="#a" class="search-btn">ss</a>
 </div> -->
 
-<div class="wrapper-grid"  >
+ <div class="wrapper-grid"  >
     <app-user-item class="container" *ngFor="let item of users | paginate: {
   itemsPerPage: 8,
   currentPage: page, totalItems: totalLength}"
@@ -11,4 +11,6 @@
   (emitValue)="toDetails($event)"></app-user-item>
 </div>
 
-<pagination-controls (pageChange)="page = $event" class="pagBtn"></pagination-controls>
+<div class="pagBtns">
+  <pagination-controls (pageChange)="page = $event"></pagination-controls>
+</div>

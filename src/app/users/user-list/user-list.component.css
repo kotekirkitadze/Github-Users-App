@@ -4,6 +4,7 @@
 	--clr-gray-light: #b0bec5;
 }
 
+
 .wrapper-grid{
 	display: grid;
 	grid-template-columns: minmax(300px, 1fr);
@@ -22,6 +23,11 @@
   transition-duration: 0.3s;
 }
 
+.pagBtns {
+  align-items: center;
+  padding-left: 40%;
+  padding-bottom: 15px;
+}
 
 .container:hover{
 box-shadow: 4px 3px 11px 6px
@@ -29,9 +35,6 @@ box-shadow: 4px 3px 11px 6px
     transform: translateY(-3px);
 }
 
-.pagBtn {
-  margin: 0 auto;
-}
 
 @media screen and (min-width: 500px){
 	.wrapper-grid{
