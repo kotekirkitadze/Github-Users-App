@@ -1,30 +1,85 @@
-<div class="container" *ngIf="data |async as data">
+<div
+  class="container"
+  *ngIf="userData | async as user"
+>
   <div class="containerMain">
     <div class="box">
-        <div class="image imageContainer">
-            <img class="image" src="{{data.user.pic_url}}" alt="User's picture">
-             <h3 class="userType">{{data['user'].userType}}</h3>
+      <div class="image imageContainer">
+        <img
+          *ngIf="user.pic_url"
+          class="image"
+          src="{{ user.pic_url }}"
+          alt="User's picture"
+        />
+        <h3 class="userType">
+          {{ user.userType }}
+        </h3>
+      </div>
+      <div class="details">
+        <h1>
+          <a
+            href="{{ user.githubURL }}"
+            target="_blank"
+            >{{ user.name }}</a
+          >
+        </h1>
+        <p *ngIf="user.email">
+          Email {{ user.email }}
+        </p>
+        <p *ngIf="user.userName">
+          Github Username: {{ user.userName }}
+        </p>
+        <p>Followers: {{ user.followers }}</p>
+        <p>
+          Account Created at:
+          {{ user.created_at | date }}
+        </p>
+        <p>
+          First Three repos' name:
+          <span
+            *ngFor="
+              let repo of user.repositoriesInfo
+            "
+          >
+            <a
+              href="{{ repo.repo_url }}"
+              target="_blank"
+              >{{ repo.repo_name }} </a
+            >,
+          </span>
+        </p>
+        <p *ngIf="user.organization_name">
+          Organization name:
+          {{ user.organization_name }}
+        </p>
+        <div
+          class="orgDiv"
+          *ngIf="user.organization_picture"
+        >
+          <p>Organization picture:</p>
+          <a
+            href="{{ user.organization_site }}"
+            target="_blank"
+          >
+            <img
+              src="{{
+                user.organization_picture
+              }}"
+            />
+          </a>
         </div>
-        <div class="details">
-          <h1><a href="{{data['user'].githubURL}}" target="_blank">{{data['user'].name}}</a></h1>
-          <p *ngIf="data['user'].email">Email {{data['user'].email}}</p>
-          <p *ngIf="data['user'].userName">Github Username: {{data['user'].userName}}</p>
-          <p>Followers: {{data['user'].followers}}</p>
-          <p>Account Created at: {{data['user'].created_at | date}}</p>
-          <p>First Three repos' name:
-            <span *ngFor="let repo of data['user'].repositoriesInfo">
-                  <a href="{{repo.repo_url}}" target="_blank">{{repo.repo_name}} </a>,
-            </span>
-          </p>
-          <p *ngIf="data['user'].organization_name">Organization name: {{data['user'].organization_name}}</p>
-          <div class="orgDiv" *ngIf="data.user.organization_picture">
-            <p>Organization picture:</p>
-            <a href="{{data.user.organization_site}}" target="_blank">
-              <img src="{{data.user.organization_picture}}">
-            </a>
-          </div>
-          <a routerLink="" class="btn">Back</a>
-        </div>
+        <a routerLink="" class="btn">Back</a>
+      </div>
     </div>
+  </div>
+</div>
+
+<div
+  *ngIf="errorMessage"
+  class="notFoundCOntainer"
+>
+  <div class="errorMessage">
+    <h3>User not found</h3>
+    <a routerLink="" class="btn">Back</a>
   </div>
 </div>

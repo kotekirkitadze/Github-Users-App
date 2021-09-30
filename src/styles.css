@@ -1,15 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
-*{
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-	font-family: "Open Sans" sans-serif;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans' sans-serif;
 }
 
-/*
-body{
-	color: grey;
-} */
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue',
+    sans-serif;
+  background: url('./assets/images/backgroundPic.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

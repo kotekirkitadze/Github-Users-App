@@ -1,25 +1,36 @@
 <nav>
-    <ul>
-      <li class="logo" routerLink="">Github Users</li>
-      <div class="items">
-
-      </div>
-      <li class="search-icon">
-          <input type="text"
-                       placeholder="Search User"
-                       [matAutocomplete]="auto"
-                [formControl]="myControl">
-          <mat-autocomplete #auto="matAutocomplete" >
-                  <mat-option class="options"
-                              *ngFor="let option of filteredOptions | async"
-                              [value]="option"
-                              (click)="searchFromOption(option)">
-                    {{option}}
-                  </mat-option>
-          </mat-autocomplete>
-          <label class="icon"  (click)="search()">
-                <span><fa-icon class="fa-search" [icon]="faSearch"></fa-icon> </span>
-          </label>
-      </li>
-    </ul>
+  <ul>
+    <li class="logo" routerLink="">
+      Github Users
+    </li>
+    <div class="items"></div>
+    <li class="search-icon">
+      <input
+        type="text"
+        placeholder="Search User"
+        [matAutocomplete]="auto"
+        [formControl]="myControl"
+      />
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option
+          class="options"
+          *ngFor="
+            let option of filteredOptions | async
+          "
+          [value]="option"
+          (click)="searchFromOption(option)"
+        >
+          {{ option }}
+        </mat-option>
+      </mat-autocomplete>
+      <label class="icon" (click)="search()">
+        <span
+          ><fa-icon
+            class="fa-search"
+            [icon]="faSearch"
+          ></fa-icon>
+        </span>
+      </label>
+    </li>
+  </ul>
 </nav>

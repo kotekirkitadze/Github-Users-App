@@ -1,15 +1,34 @@
- <button (click)="changeMode()">switcher</button>
+<button (click)="changeMode()" class="btn">
+  <span *ngIf="mode">List</span>
+  <span *ngIf="!mode">Grid</span>
+</button>
 
- <div [ngClass]="[mode ? 'wrapper-grid' : 'wrapper-flex']"  >
-    <app-user-item [ngClass]="[mode ? 'container': 'containerForListView']" *ngFor="let item of users | paginate: {
-                itemsPerPage: 8,
-  currentPage: page, totalItems: totalLength}"
-  [user]="item"
-  [mode]="mode"
-  [routerLink]="['/users', item.userName]"
-  (emitValue)="toDetails($event)"></app-user-item>
+<div
+  [ngClass]="[
+    mode ? 'wrapper-grid' : 'wrapper-flex'
+  ]"
+>
+  <app-user-item
+    [ngClass]="[
+      mode ? 'container' : 'containerForListView'
+    ]"
+    *ngFor="
+      let item of users
+        | paginate
+          : {
+              itemsPerPage: 8,
+              currentPage: page,
+              totalItems: totalLength
+            }
+    "
+    [user]="item"
+    [mode]="mode"
+    (emitValue)="toDetails($event)"
+  ></app-user-item>
 </div>
 
 <div class="pagBtns">
-  <pagination-controls (pageChange)="page = $event"></pagination-controls>
+  <pagination-controls
+    (pageChange)="page = $event"
+  ></pagination-controls>
 </div>

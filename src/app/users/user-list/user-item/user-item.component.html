@@ -1,17 +1,62 @@
-<div [ngClass]="[mode? 'banner-img': 'banner-imgForListView']"></div>
-<img src="{{user.pic_url}}" alt="Profile Image"
-[ngClass]="[mode ? 'profile-img' : 'profile-imgForListView']">
+<div
+  [ngClass]="[
+    mode ? 'banner-img' : 'banner-imgForListView'
+  ]"
+></div>
+<img
+  src="{{ user.pic_url }}"
+  alt="Profile Image"
+  [ngClass]="[
+    mode
+      ? 'profile-img'
+      : 'profile-imgForListView'
+  ]"
+/>
 <div>
-<p [ngClass]="[ !mode ? 'modeList' : '']">{{user.userType}}</p>
-  <div [ngClass]="{'infoDiv': !mode}">
-      <a [ngClass]="[mode? 'name' : 'nameForListView']" (click)="emit(user.userName)"><h1>{{user.name}}</h1></a>
-    <p [ngClass]="[mode ? 'description' : 'descriptionForListView']">Number of repositories: {{user.repositories ? user.repositories: 0 }}</p>
-    <div [ngClass]="[mode? 'repoInfo': 'repoInfoList']" *ngIf="user.repositoriesInfo[0]">
-        <h5>First three repo:</h5>
-        <p class="repoNames" *ngFor="let el of user.repositoriesInfo; let i = index">{{i+1}}.
-        <a href="{{el.repo_url}}" target="_blank">{{el.repo_name}}</a> </p>
+  <p [ngClass]="[!mode ? 'modeList' : '']">
+    {{ user.userType }}
+  </p>
+  <div [ngClass]="{ infoDiv: !mode }">
+    <a
+      [ngClass]="[
+        mode ? 'name' : 'nameForListView'
+      ]"
+      (click)="emit(user.userName)"
+      ><h1>{{ user.name }}</h1></a
+    >
+    <p
+      [ngClass]="[
+        mode
+          ? 'description'
+          : 'descriptionForListView'
+      ]"
+    >
+      Number of repositories:
+      {{
+        user.repositories ? user.repositories : 0
+      }}
+    </p>
+    <div
+      [ngClass]="[
+        mode ? 'repoInfo' : 'repoInfoList'
+      ]"
+      *ngIf="user.repositoriesInfo[0]"
+    >
+      <h5>First three repo:</h5>
+      <p
+        class="repoNames"
+        *ngFor="
+          let el of user.repositoriesInfo;
+          let i = index
+        "
+      >
+        {{ i + 1 }}.
+        <a
+          href="{{ el.repo_url }}"
+          target="_blank"
+          >{{ el.repo_name }}</a
+        >
+      </p>
     </div>
   </div>
 </div>
-
-

@@ -13,7 +13,6 @@ export interface UserApi {
   html_url?: string;
 }
 
-
 export interface User {
   name: string;
   pic_url: string;
@@ -33,7 +32,7 @@ export interface RepositoryApi {
   html_url: string;
   owner?: {
     login: string;
-  }
+  };
 }
 
 export interface Repository {
@@ -53,10 +52,11 @@ export interface Organization {
   organization_picture: string;
 }
 
-
-export type userWithOrganization = User & Organization;
+//User...
+export type UserWithOrganization = User &
+  Organization;
 
 export interface UserResolved {
   error?: any;
-  user?: userWithOrganization;
+  user?: UserWithOrganization;
 }

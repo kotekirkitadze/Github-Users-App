@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {
-  HttpClientModule, HTTP_INTERCEPTORS
+  HttpClientModule,
+  HTTP_INTERCEPTORS,
 } from '@angular/common/http';
 
 import { NgxPaginationModule } from 'ngx-pagination'; // <-- import the module
-
 
 import { AppComponent } from './app.component';
 import { UserDetailsComponent } from './users/user-details/user-details.component';
@@ -21,10 +21,13 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
-
+import { GITHUB_API } from './services/api.service';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     UserListComponent,
     UserItemComponent,
     HeaderComponent,
-    NotFoundComponent
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,10 +50,19 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MatInputModule,
     FormsModule,
     FontAwesomeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true }],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ApiInterceptor,
+      multi: true,
+    },
+    {
+      provide: GITHUB_API,
+      useValue: environment.gitHubApi,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
-// { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true }

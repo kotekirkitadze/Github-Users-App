@@ -1,102 +1,95 @@
-:root{
-	--clr-primary:  #651fff;
-	--clr-gray:  #37474f;
-	--clr-gray-light: #b0bec5;
+:root {
+  --clr-primary: #651fff;
+  --clr-gray: #37474f;
+  --clr-gray-light: #b0bec5;
 }
 
-
-
-.banner-img{
-	position: absolute;
-	background-image: url("https://analyticsinsight.b-cdn.net/wp-content/uploads/2020/11/Artificial-Intelligence-5.jpg");
-	height: 10rem;
-	width: 100%;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+.banner-img {
+  position: absolute;
+  background-image: url('https://analyticsinsight.b-cdn.net/wp-content/uploads/2020/11/Artificial-Intelligence-5.jpg');
+  height: 10rem;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-
- .banner-imgForListView{
-	position: absolute;
-	background-image: url("https://analyticsinsight.b-cdn.net/wp-content/uploads/2020/11/Artificial-Intelligence-5.jpg");
-	height: 12.5rem;
-	width: 14%;
-	background-position: left;
-	background-repeat: no-repeat;
-	background-size: cover;
+.banner-imgForListView {
+  position: absolute;
+  background-image: url('https://analyticsinsight.b-cdn.net/wp-content/uploads/2020/11/Artificial-Intelligence-5.jpg');
+  height: 12.5rem;
+  width: 14%;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-
-.profile-img{
-	width: 8rem;
-	clip-path: circle(60px at center);
-	margin-top: 4.5rem;
+.profile-img {
+  width: 8rem;
+  clip-path: circle(60px at center);
+  margin-top: 4.5rem;
 }
 
-.profile-imgForListView{
-	margin-left: 70px;
-	width: 8rem;
-	clip-path: circle(60px at center);
-	margin-top: 2.5rem;
+.profile-imgForListView {
+  margin-left: 70px;
+  width: 8rem;
+  clip-path: circle(60px at center);
+  margin-top: 2.5rem;
 }
 
 .name {
-	font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .nameForListView {
-	text-align: center;
-	font-size: 1.5rem;
+  text-align: center;
+  font-size: 1.5rem;
 }
 
-.infoDiv{
-	padding: 10px;
-	border-radius: 25px;
-	position: absolute;
-	top: 10px;
-	width: 35%;
-	right: 10px;
-	height: 11rem;
-	box-shadow: 0px 2px 8px 0px #68a1ac;
-	background-color: #f2f6f8;
+.infoDiv {
+  padding: 10px;
+  border-radius: 25px;
+  position: absolute;
+  top: 10px;
+  width: 35%;
+  right: 10px;
+  height: 11rem;
+  box-shadow: 0px 2px 8px 0px #68a1ac;
+  background-color: #f2f6f8;
 }
 
-.infoDiv > p{
+.infoDiv > p {
   margin-top: -12px;
   text-align: center;
 }
 
-
-h1{
+h1 {
   font-weight: 700;
 }
 
-.description{
-	margin: 1rem 2rem;
-	font-size: 0.9rem;
+.description {
+  margin: 1rem 2rem;
+  font-size: 0.9rem;
 }
 
-.descriptionForListView{
-	margin: 10px 2rem;
-	font-size: 0.9rem;
+.descriptionForListView {
+  margin: 10px 2rem;
+  font-size: 0.9rem;
 }
 
-
-
-.modeList{
-    position: absolute;
-    left: 210px;
-    top: 85px;
-    color: #050505;
-    font-size: 22px;
+.modeList {
+  position: absolute;
+  left: 210px;
+  top: 85px;
+  color: #050505;
+  font-size: 22px;
 }
-.type{
+.type {
   background-color: blue;
-    position: absolute;
-    left: 210px;
-    top: 85px;
-    color: #f2f6f8;
+  position: absolute;
+  left: 210px;
+  top: 85px;
+  color: #f2f6f8;
 }
 
 a:hover {
@@ -110,10 +103,10 @@ a:hover {
 }
 
 .repoInfo > h5 {
-font-weight: 700;
+  font-weight: 700;
 }
 
-.repoInfoList{
+.repoInfoList {
   text-align: center;
   /* border: 2px solid red; */
   margin-top: -10px;
@@ -123,11 +116,9 @@ font-weight: 700;
   font-weight: 700;
 }
 
-
-
-h5{
+h5 {
   font-size: 17px;
-   text-align: left;
+  text-align: left;
 }
 
 .repoNames {

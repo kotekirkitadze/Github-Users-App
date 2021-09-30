@@ -1,52 +1,52 @@
-:root{
-	--clr-primary:  #651fff;
-	--clr-gray:  #37474f;
-	--clr-gray-light: #b0bec5;
+:root {
+  --clr-primary: #651fff;
+  --clr-gray: #37474f;
+  --clr-gray-light: #b0bec5;
 }
 
-
-.wrapper-grid{
-	display: grid;
-	grid-template-columns: minmax(300px, 1fr);
-	justify-content: center;
-	grid-gap: 2rem;
-	margin: 2rem;
+.wrapper-grid {
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr);
+  justify-content: center;
+  grid-gap: 2rem;
+  margin: 2rem;
   margin-top: 2rem;
   transition-duration: 0.3s;
+  background: white;
 }
 
-.wrapper-flex{
-	display: flex;
-	flex-direction: column;
-	padding: 1rem;
+.wrapper-flex {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
   transition-duration: 0.3s;
 }
 
-.container{
-	box-shadow: 0px 2px 8px 0px grey;
-	text-align: center;
-	border-radius: 1rem;
-	position: relative;
-	overflow: hidden;
-  transition-duration: 0.3s;
-  cursor: pointer;
-}
-
-.containerForListView{
+.container {
   box-shadow: 0px 2px 8px 0px grey;
-	border-radius: 1rem;
-  cursor: pointer;
-	position: relative;
-	overflow: hidden;
-	width: 70%;
-	height: 200px;
-	position: relative;
-	margin: 0 auto;
-  margin-bottom: 1rem;
-	background-position: right;
-	background-size: cover;
+  text-align: center;
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
   transition-duration: 0.3s;
-  background-image: url("../../../assets/images/backgroundPic2.png");
+  cursor: pointer;
+}
+
+.containerForListView {
+  box-shadow: 0px 2px 8px 0px grey;
+  border-radius: 1rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  width: 70%;
+  height: 200px;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  background-position: right;
+  background-size: cover;
+  transition-duration: 0.3s;
+  background-image: url('../../../assets/images/backgroundPic2.png');
 }
 
 .pagBtns {
@@ -55,33 +55,52 @@
   padding-bottom: 15px;
 }
 
-.container:hover{
-box-shadow: 4px 3px 11px 6px
-      rgb(200 152 44 / 46%);
-    transform: translateY(-3px);
-}
-
-.containerForListView:hover{
+.container:hover {
   box-shadow: 4px 3px 11px 6px
-      rgb(200 152 44 / 46%);
-    transform: translateY(-3px);
+    rgb(200 152 44 / 46%);
+  transform: translateY(-3px);
 }
 
-
-@media screen and (min-width: 500px){
-	.wrapper-grid{
-		grid-template-columns: repeat(2, 1fr);
-	}
+.containerForListView:hover {
+  box-shadow: 4px 3px 11px 6px
+    rgb(200 152 44 / 46%);
+  transform: translateY(-3px);
 }
 
-@media screen and (min-width: 700px){
-	.wrapper-grid{
-		grid-template-columns: repeat(3, 1fr);
-	}
+.btn {
+  margin-top: 10px;
+  margin-left: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background: #e4dfdf;
+  font-size: 26px;
+  text-decoration: none;
+  color: #398f51;
+  border-radius: 10px;
+  transition: background 0.5s;
+  border: none;
+  width: 120px;
+  text-align: center;
 }
 
-@media screen and (min-width: 900px){
-	.wrapper-grid{
-		grid-template-columns: repeat(4, 1fr);
-	}
+.btn:hover {
+  background: #c9c4c4;
+}
+
+@media screen and (min-width: 500px) {
+  .wrapper-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .wrapper-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .wrapper-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
