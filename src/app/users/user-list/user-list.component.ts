@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import {
@@ -15,14 +15,39 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class UserListComponent implements OnInit {
   mode: boolean = true;
+  config: any;
 
   constructor(
     private apiService: ApiService,
-    private router: Router
-  ) { }
+    private router: Router,
+    private route: ActivatedRoute
+  ) {
+    this.config = {
+      currentPage: 1,
+      itemsPerPage: 8,
+      totalItems: 50
+    }
+    route.queryParams.subscribe(
+      params => {
+        this.config.currentPage = params['page'] ? params['page'] : 1
+        console.log("aaa", params['page'])
+      }
+    )
+  }
 
-  totalLength: any;
-  page: number = 1;
+  pageChange(newPage: number) {
+    this.router.navigate(['users'], {
+      queryParams: { page: newPage }
+    }),
+
+      this.getUsers(newPage).subscribe((d) => {
+        this.users = d;
+        console.log('hhh', d);
+      });
+  }
+
+  // totalLength: any;
+  // page: number = 1;
 
   users: User[];
 
@@ -30,20 +55,23 @@ export class UserListComponent implements OnInit {
     this.mode = !this.mode;
   }
 
+
   ngOnInit(): void {
-    this.getUsers().subscribe((d) => {
-      this.users = d;
-      console.log('hhh', d);
-    });
+    // this.getUsers().subscribe((d) => {
+    //   this.users = d;
+    //   console.log('hhh', d);
+    // });
+
+    this.pageChange(1)
   }
 
   toDetails(userName: string) {
     this.router.navigate(['users', userName]);
   }
 
-  getUsers(): Observable<User[]> {
+  getUsers(data?): Observable<User[]> {
     return this.apiService
-      .getUsers()
+      .getUsers(data)
       .pipe(
         map((d) =>
           d.map<User>((data: UserApi) =>

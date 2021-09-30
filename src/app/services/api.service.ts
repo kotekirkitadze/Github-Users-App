@@ -3,14 +3,14 @@ import {
   Injectable,
   InjectionToken,
 } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import {
   EMPTY,
   forkJoin,
   Observable,
   of,
 } from 'rxjs';
-import { map, switchMap, catchError, shareReplay } from 'rxjs/operators';
+import { map, switchMap, catchError, shareReplay, tap } from 'rxjs/operators';
 import {
   UserApi,
   OrganizationAPi,
@@ -29,11 +29,18 @@ export class ApiService {
     @Inject(GITHUB_API) private github_url: string
   ) { }
 
-  getUsers(): Observable<UserApi[]> {
+  getUsers(data): Observable<UserApi[]> {
+    const params: HttpParams = new HttpParams()
+      .set('q', 'followers:<=100')
+      .set('page', data)
+      .set('per_page', 8)
     return this.http
-      .get<any[]>(this.github_url)
+      .get<any[]>(this.github_url, {
+        params: params
+      })
       .pipe(
         shareReplay(1),
+        map((d: any) => d.items),
         map((d) => d.map((data) => data.url)),
         switchMap((d) => {
           return forkJoin(
@@ -72,13 +79,11 @@ export class ApiService {
     );
   }
 
-
-
   //Single user
   getUser(userName: string): Observable<any> {
     return this.http
       .get<UserApi>(
-        `${this.github_url}/${userName}`
+        `https://api.github.com/users/${userName}`
       )
       .pipe(
         switchMap((data) => {

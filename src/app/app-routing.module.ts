@@ -5,6 +5,7 @@ import { UserDetailsComponent } from './users/user-details/user-details.componen
 import { UserResolver } from './users/user-details/user-resolver.service';
 import { UserListComponent } from './users/user-list/user-list.component';
 
+
 const ROUTES = [
   {
     path: '',

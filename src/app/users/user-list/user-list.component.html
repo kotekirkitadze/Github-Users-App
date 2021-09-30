@@ -15,11 +15,7 @@
     *ngFor="
       let item of users
         | paginate
-          : {
-              itemsPerPage: 8,
-              currentPage: page,
-              totalItems: totalLength
-            }
+          : config
     "
     [user]="item"
     [mode]="mode"
@@ -29,6 +25,6 @@
 
 <div class="pagBtns">
   <pagination-controls
-    (pageChange)="page = $event"
+    (pageChange)="pageChange($event)"
   ></pagination-controls>
 </div>
